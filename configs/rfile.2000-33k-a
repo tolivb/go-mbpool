@@ -1,0 +1,106 @@
+# SUN2000-KTL33-A
+#active power
+32290:2:active_power**:1000:I32:kW
+#reactive power
+32292:2:reactive_power**:1000:I32:kVar
+#total input power
+32294:2:input_power**:1000:U32:kW
+#E-hour
+32298:2:ehour**:100:U32:kWh:1h:ehour
+32345:2:ehour^p:100:U32:kWh:-1h:ehour
+#E-day
+32300:2:eday**:100:U32:kWh:1d:eday
+32349:2:eday^p:100:U32:kWh:-1d:eday
+#E-Month
+32302:2:emonth**:100:U32:kWh:1m:emonth
+32353:2:emonth^p:100:U32:kWh:-1m:emonth
+#E-Year
+32304:2:eyear:100:U32:kWh:1y:eyear
+32357:2:eyear^p:100:U32:kWh:-1y:eyear
+#E-Total
+32306:2:etotal**:100:U32:kWh:inf:etotal
+#Cabinet temp
+32286:1:temp**:10:I16:C
+#PV1 voltage
+32262:1:Upv1:10:I16:V
+#PV1 current
+32263:1:Ipv1:10:I16:A
+#PV2 voltage
+32264:1:Upv2:10:I16:V
+#PV2 current
+32265:1:Ipv2:10:I16:A
+#PV3 voltage
+32266:1:Upv3:10:I16:V
+#PV3 current
+32267:1:Ipv3:10:I16:A
+#PV4 voltage
+32268:1:Upv4:10:I16:V
+#PV4 current
+32269:1:Ipv4:10:I16:A
+#PV5 voltage
+32270:1:Upv5:10:I16:V
+#PV5 current
+32271:1:Ipv5:10:I16:A
+#PV6 voltage
+32272:1:Upv6:10:I16:V
+#PV6 current
+32273:1:Ipv6:10:I16:A
+#PV7 voltage
+32314:1:Upv7:10:I16:V
+#PV7 current
+32315:1:Ipv7:10:I16:A
+#PV8 voltage
+32316:1:Upv8:10:I16:V
+#PV8 current
+32317:1:Ipv8:10:I16:A
+#invertor effiiency
+32285:1:efficiency:100:U16:%%
+#inverter on grid
+32322:1:ongrid**:1:U16:_
+#insulation resistance
+32323:1:iResistance:1000:U16:Mohm
+#MPPT total input power
+33022:2:inP_MPPT1:1000:U32:kW
+33024:2:inP_MPPT2:1000:U32:kW
+33026:2:inP_MPPT3:1000:U32:kW
+33070:2:inP_MPPT4:1000:U32:kW
+#Uab,bc,ca...
+32274:1:Uab:10:U16:V
+32275:1:Ubc:10:U16:V
+32276:1:Uca:10:U16:V
+32277:1:Ua:10:U16:V
+32278:1:Ub:10:U16:V
+32279:1:Uc:10:U16:V
+32280:1:Ia:10:U16:A
+32281:1:Ib:10:U16:A
+32282:1:Ic:10:U16:A
+32283:1:freq:100:U16:Hz
+32284:1:power_factor:1000:U16:_:none
+32287:1:inv_status:1:U16:_:none
+#active power peak
+32288:2:peak_power**:1000:I32:kW
+#states and errors
+32319:1:s1:1:U16:_
+32320:1:s2:1:U16:_
+32321:1:s3:1:U16:_
+50000:1:a1:1:U16:_
+50001:1:a2:1:U16:_
+50002:1:a3:1:U16:_
+50003:1:a4:1:U16:_
+50004:1:a5:1:U16:_
+50005:1:a6:1:U16:_
+50006:1:a7:1:U16:_
+50007:1:a8:1:U16:_
+50008:1:a9:1:U16:_
+50009:1:a10:1:U16:_
+50010:1:a11:1:U16:_
+50011:1:a12:1:U16:_
+50012:1:a13:1:U16:_
+50013:1:a14:1:U16:_
+50014:1:a15:1:U16:_
+50015:1:a16:1:U16:_
+50016:1:a17:1:U16:_
+
+
+
+

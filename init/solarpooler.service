@@ -1,0 +1,15 @@
+[Unit]
+Description=Solar stats pooler
+After=network.target
+After=rc-local.service
+
+[Service]
+ExecStart=cmd
+WorkingDirectory=/tmp
+StandardOutput=null
+StandardError=inherit
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target
