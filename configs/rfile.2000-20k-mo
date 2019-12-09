@@ -1,0 +1,54 @@
+# SUN2000-20KTL-MO
+#active power
+32080:2:active_power**:1000:I32:kW
+#active power peak
+32078:2:peak_power**:1000:I32:kW
+#reactive power
+32082:2:active_power**:1000:I32:kVar
+#total input power
+32064:2:input_power**:1000:I32:kW
+#E-day
+32114:2:eday**:100:U32:kWh:1d:eday
+#E-Total
+32106:2:etotal**:100:U32:kWh:inf:etotal
+#Cabinet temp
+32087:1:temp**:10:I16:C
+#PV1 voltage
+32016:1:Upv1:10:I16:V
+#PV1 current
+32017:1:Ipv1:100:I16:A
+#PV2 voltage
+32018:1:Upv2:10:I16:V
+#PV2 current
+32019:1:Ipv2:100:I16:A
+#PV3 voltage
+32020:1:Upv3:10:I16:V
+#PV3 current
+32021:1:Ipv3:100:I16:A
+#PV4 voltage
+32022:1:Upv4:10:I16:V
+#PV4 current
+32023:1:Ipv4:100:I16:A
+#invertor effiiency
+32086:1:efficiency:100:U16:%%
+#insulation resistance
+32088:1:iResistance:1000:U16:Mohm
+#Uab,bc,ca...
+32066:1:Uab:10:U16:V
+32067:1:Ubc:10:U16:V
+32068:1:Uca:10:U16:V
+32069:1:Ua:10:U16:V
+32070:1:Ub:10:U16:V
+32071:1:Uc:10:U16:V
+32072:2:Ia:1000:I32:A
+32074:2:Ib:1000:I32:A
+32076:2:Ic:1000:I32:A
+32085:1:freq:100:U16:Hz
+32084:1:power_factor:1000:I16:_:none
+32089:1:inv_status:1:U16:_:none
+32000:1:s1:1:U16:_
+32002:1:s2:1:U16:_
+32003:2:s3:1:U32:_
+32008:1:a1:1:U16:_
+32009:1:a2:1:U16:_
+32010:1:a3:1:U16:_

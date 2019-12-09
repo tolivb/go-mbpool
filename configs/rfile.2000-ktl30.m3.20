@@ -1,0 +1,95 @@
+# SUN2000-KTL33-M3
+#active power
+32080:2:active_power**:1000:I32:kW
+#reactive power
+32082:2:reactive_power**:1000:I32:kVar
+#input power
+32064:2:input_power**:1000:I32:kW
+#E-day
+32114:2:eday**:100:U32:kWh:1d:eday
+#E-Total
+32106:2:etotal**:100:U32:kWh:inf:etotal
+#Cabinet temp
+32087:1:temp**:10:I16:C
+#invertor effiiency
+32086:1:efficiency:100:U16:%%
+#insulation resistance
+32088:1:iResistance:1000:U16:Mohm
+
+#PV1 voltage
+32016:1:Upv1:10:I16:V
+#PV1 current
+32017:1:Ipv1:100:I16:A
+
+#PV2 voltage
+32018:1:Upv2:10:I16:V
+#PV2 current
+32019:1:Ipv2:100:I16:A
+
+#PV3 voltage
+32020:1:Upv3:10:I16:V
+#PV3 current
+32021:1:Ipv3:100:I16:A
+
+#PV4 voltage
+32022:1:Upv4:10:I16:V
+#PV4 current
+32023:1:Ipv4:100:I16:A
+
+#PV5 voltage
+32024:1:Upv5:10:I16:V
+#PV4 current
+32025:1:Ipv5:100:I16:A
+
+#PV6 voltage
+32026:1:Upv6:10:I16:V
+#PV4 current
+32027:1:Ipv6:100:I16:A
+
+#PV7 voltage
+32028:1:Upv7:10:I16:V
+#PV7 current
+32029:1:Ipv7:100:I16:A
+
+#PV8 voltage
+32030:1:Upv8:10:I16:V
+#PV8 current
+32031:1:Ipv8:100:I16:A
+
+#state1
+32000:1:state1:1:U16:_
+32002:1:state2:1:U16:_
+32003:1:state3:1:U16:_
+
+#alarm1
+32008:1:alarm1:1:U16:_
+32009:1:alarm2:1:U16:_
+32010:1:alarm3:1:U16:_
+
+#status
+32089:1:status:1:U16:_
+
+#fault code
+32090:1:faultcode:1:U16:_
+
+#startupts
+32091:2:startupts:2:U32:_
+
+#shutdownts
+32093:2:shutdownts:2:U32:_
+
+#systemtimets
+40000:2:ctimets:2:U32:_
+
+#Uab,bc,ca...
+32066:1:Uab:10:U16:V
+32067:1:Ubc:10:U16:V
+32068:1:Uca:10:U16:V
+32069:1:Ua:10:U16:V
+32070:1:Ub:10:U16:V
+32071:1:Uc:10:U16:V
+32072:1:Ia:1000:I32:A
+32074:1:Ib:1000:I32:A
+32076:1:Ic:1000:I32:A
+32085:1:freq:100:U16:Hz
+32084:1:power_factor:1000:I16:_:none
