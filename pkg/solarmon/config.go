@@ -120,6 +120,7 @@ const defaultInflxDomain = "mon.val-energy.com"
 const defaultRfile = `32080:2:active_power**:1000:I32:kW
 32082:2:reactive_power**:1000:I32:kVar
 32064:2:input_power**:1000:I32:kW
+32078:2:peak_power**:1000:I32:kW
 32114:2:eday**:100:U32:kWh:1d:eday
 32106:2:etotal**:100:U32:kWh:inf:etotal
 32087:1:temp**:10:I16:C
@@ -143,7 +144,7 @@ const defaultRfile = `32080:2:active_power**:1000:I32:kW
 32031:1:Ipv8:100:I16:A
 32000:1:state1:1:U16:_
 32002:1:state2:1:U16:_
-32003:1:state3:1:U16:_
+32003:2:state3:1:U32:_
 32008:1:alarm1:1:U16:_
 32009:1:alarm2:1:U16:_
 32010:1:alarm3:1:U16:_
@@ -158,9 +159,9 @@ const defaultRfile = `32080:2:active_power**:1000:I32:kW
 32069:1:Ua:10:U16:V
 32070:1:Ub:10:U16:V
 32071:1:Uc:10:U16:V
-32072:1:Ia:1000:I32:A
-32074:1:Ib:1000:I32:A
-32076:1:Ic:1000:I32:A
+32072:2:Ia:1000:I32:A
+32074:2:Ib:1000:I32:A
+32076:2:Ic:1000:I32:A
 32085:1:freq:100:U16:Hz
 32084:1:power_factor:1000:I16:_:none
 `
