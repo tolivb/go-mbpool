@@ -4,13 +4,15 @@ LDFLAGS="-X 'main.InfluxEndpoint=${INFLUX_ENDPOINT}' -X 'main.InfluxTags=${INFLU
 
 default: 
 	go build -ldflags ${LDFLAGS} -mod=vendor -o go-mbpool cmd/go-mbpool/main.go
-pi:
-	env GOOS=linux GOARCH=arm GOARM=7 go build -ldflags ${LDFLAGS} -mod=vendor -o go-mbpool.arm cmd/go-mbpool/main.go
 pi6:
 	env GOOS=linux GOARCH=arm GOARM=6 go build -ldflags ${LDFLAGS} -mod=vendor -o go-mbpool6.arm cmd/go-mbpool/main.go
+pi7:
+	env GOOS=linux GOARCH=arm GOARM=7 go build -ldflags ${LDFLAGS} -mod=vendor -o go-mbpool7.arm cmd/go-mbpool/main.go
+pi8:
+	env GOOS=linux GOARCH=arm64 go build -ldflags ${LDFLAGS} -mod=vendor -o go-mbpool8.arm cmd/go-mbpool/main.go
 win:
 	env GOOS=windows GOARCH=amd64 go build -ldflags ${LDFLAGS} -mod=vendor -o go-mbpool.exe cmd/go-mbpool/main.go
 
 .PHONY: clean
 clean:
-	rm -f ./go-mbpool ./main ./go-mbpool.arm ./go-mbpool6.arm ./go-mbpool.exe
+	rm -f ./go-mbpool ./main ./go-mbpool.arm ./go-mbpool6.arm /go-mbpool7.arm /go-mbpool8.arm ./go-mbpool.exe

@@ -150,7 +150,7 @@ Usage of /home/pi/solarpooler/go-mbpool.arm:
 
 ```
 
-# Registers list desciption (rfile)
+# Registers description file (rfile)
 ```
 #register_id:read_count:gain:type:unit:timestamp offset:influxdb measurement name 
 #active power
