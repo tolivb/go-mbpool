@@ -14,15 +14,15 @@ func NewConfig(InfluxEndpoint, InfluxTags, BuildTime, GitCommit string) *Config 
 
 	flag.StringVar(&config.ModbusParity, "prty", "N", "Parity")
 	flag.IntVar(&config.StopBits, "sb", 1, "Stop Bits")
-	flag.DurationVar(&config.Timeout, "t", 5*time.Second, "Max secs to wait for single read to finish")
+	flag.DurationVar(&config.Timeout, "t", 1*time.Second, "Max secs to wait for single read to finish")
 	flag.IntVar(&config.DataBits, "db", 8, "Data Bits")
-	flag.IntVar(&config.BaudRate, "br", 19200, "Baud Rate")
-	flag.UintVar(&config.SlaveID, "slaveId", 15, "Slave ID")
+	flag.IntVar(&config.BaudRate, "br", 9600, "Baud Rate")
+	flag.UintVar(&config.SlaveID, "slaveId", 1, "Slave ID")
 	flag.StringVar(&config.TTYFile, "tty", "/dev/ttyUSB0", "TTY device file/name")
+	flag.BoolVar(&config.AutoTTY, "autotty", false, "If set will search for first available TTY file in /dev/ttyUSB* in case TTYFile is missing(only linux)")
 	flag.StringVar(&config.ReadRegistersFromFile, "rfile", "", "File with registers list")
 	flag.BoolVar(&config.Once, "once", false, "Run only once and exit")
-	flag.DurationVar(&config.ReadInterval, "interval", 10*time.Second, "Seconds to wait between reads")
-
+	flag.DurationVar(&config.ReadInterval, "interval", 5*time.Second, "Seconds to wait between reads")
 	flag.BoolVar(&config.InfluxDry, "influxDry", false, "Just print influx queries on stdout")
 
 	if InfluxEndpoint != "" {
@@ -96,6 +96,7 @@ type Config struct {
 	SlaveID               uint
 	InvertorType          string
 	TTYFile               string
+	AutoTTY               bool
 	ReadRegistersFromCli  []string
 	ReadRegistersFromFile string
 	ReadInterval          time.Duration

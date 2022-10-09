@@ -2,8 +2,10 @@ package solarmon
 
 import (
 	"fmt"
+	"io/ioutil"
 	"os"
 	"runtime"
+	"strings"
 
 	"github.com/goburrow/modbus"
 )
@@ -23,23 +25,35 @@ func NewModbusRTU(cfg *Config) (*ModbusRTU, error) {
 	handler.Timeout = cfg.Timeout
 	handler.IdleTimeout = cfg.Timeout * 2
 
-	return &ModbusRTU{handler: handler, connected: false}, nil
+	return &ModbusRTU{handler: handler, connected: false, autoTTY: cfg.AutoTTY}, nil
 }
 
 type ModbusRTU struct {
 	handler   *modbus.RTUClientHandler
 	client    modbus.Client
+	autoTTY   bool
 	connected bool
 }
 
 func (m *ModbusRTU) Client() (modbus.Client, error) {
 	var err error
+	var addr string
 
 	if runtime.GOOS == "linux" {
 		if _, err := os.Stat(m.handler.Address); err != nil {
 			m.connected = false
-			err = fmt.Errorf("TTYFile %s is missing(make sure rs485 to USB adapter is connected)", m.handler.Address)
-			return nil, err
+			if m.autoTTY {
+				addr, err = getTTYUSBdevicePath()
+				if err != nil {
+					return nil, err
+				}
+				m.Close()
+				m.handler.Address = addr
+				m.client = nil
+			} else {
+				err = fmt.Errorf("TTYFile %s is missing(make sure rs485 to USB adapter is connected)", m.handler.Address)
+				return nil, err
+			}
 		}
 	}
 
@@ -88,4 +102,19 @@ func (m *ModbusRTU) Reconnect() error {
 
 func (m *ModbusRTU) Close() {
 	m.handler.Close()
+}
+
+func getTTYUSBdevicePath() (string, error) {
+	files, err := ioutil.ReadDir("/dev/")
+	if err != nil {
+		return "", err
+	}
+
+	for _, f := range files {
+		if !strings.HasPrefix(f.Name(), "ttyUSB") {
+			continue
+		}
+		return "/dev/" + f.Name(), nil
+	}
+	return "", fmt.Errorf("unable to find /dev/ttyUSB* file")
 }
