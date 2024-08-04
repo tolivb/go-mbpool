@@ -7,8 +7,18 @@
 32064:2:input_power**:1000:I32:kW
 #peak power
 32078:2:peak_power**:1000:I32:kW
+#E-hour
+32112:2:ehour**:100:U32:kWh:1h:ehour
+32158:2:ehour^p:100:U32:kWh:-1h:ehour
 #E-day
 32114:2:eday**:100:U32:kWh:1d:eday
+32162:2:eday^p:100:U32:kWh:-1d:eday
+#nth
+32116:2:emonth**:100:U32:kWh:1m:emonth
+32166:2:emonth^p:100:U32:kWh:-1m:emonth
+#E-Year
+32118:2:eyear:100:U32:kWh:1y:eyear
+32170:2:eyear^p:100:U32:kWh:-1y:eyear
 #E-Total
 32106:2:etotal**:100:U32:kWh:inf:etotal
 #Cabinet temp
